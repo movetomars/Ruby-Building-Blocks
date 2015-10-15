@@ -1,11 +1,20 @@
 def caesarCipher(string, shift)
     
-    letters = string.upcase.split("")
-    letters.each do |s|
-        int = s.to_s.ord - 64
-        (int + shift + 64).chr
+    string.to_s.each_char do |s|
+        int = s.to_s.ord
+        cap = 0
+        
+        if s == /[A-Z]/
+            int = s.to_s.ord - 64
+            cap = 64
+        elsif s == /[a-z]/
+            int = s.to_s.ord - 96
+            cap = 96
+        end
+        
+        new = (int + shift.to_i + cap).chr
+        print new.to_s
     end
-    
     
 end
     
