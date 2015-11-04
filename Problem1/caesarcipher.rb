@@ -6,7 +6,7 @@ def caesarCipher(string, shift)
         int = s.to_s.ord
         cap = 0
         
-        if s.match(" ") || s.match(",") || s.match(".") || s.match("!")
+        if s.match(" ") || s.match(",")
             int = s.to_s.ord - shift
         elsif s == /[A-Z]/
             int = s.to_s.ord - 64
