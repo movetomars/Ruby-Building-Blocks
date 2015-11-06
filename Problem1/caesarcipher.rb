@@ -6,7 +6,7 @@ def caesarCipher(string, shift)
         int = s.to_s.ord
         cap = 0
         
-            if s.match(" ") || s.match(",")
+        if s.match(" ") || s.match(",")
                 int = s.to_s.ord - shift
                 elsif s == /[A-Z]/
                 int = s.to_s.ord - 64
@@ -14,16 +14,23 @@ def caesarCipher(string, shift)
                 elsif s == /[a-z]/
                 int = s.to_s.ord - 96
                 cap = 96
-            end
+        end
     
+        rough = int + shift.to_i + cap
         
-        new += (int + shift.to_i + cap).chr
+        if rough > 122 || (rough < 97 && rough > 90)
+            rough -= 26
+        end
+        
+        new += rough.chr
         
     end
     
     print new.to_s
-    
+
+
 end
+
 
 puts "What do you want to encrypt?"
 string = gets.chomp
