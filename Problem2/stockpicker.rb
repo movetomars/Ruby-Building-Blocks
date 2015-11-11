@@ -1,6 +1,8 @@
 def stockpicker(stock_prices)
-
-    print stock_prices
+    
+    stock_prices.sort.reverse
+    
+    print "Best day to sell: " + stock_prices[0] + " " + "Best day to buy: " + stock_prices[-1]
 
 end
 
