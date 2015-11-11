@@ -36,4 +36,6 @@ puts "What do you want to encrypt?"
 string = gets.chomp
 puts "And how would you like to shift it?"
 shift = gets.chomp.to_i
+
 puts caesarCipher(string, shift)
+
