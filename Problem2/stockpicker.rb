@@ -6,7 +6,7 @@ def stockpicker(stock_prices)
     
     stock_prices.each do |bnum|
         
-        stock_prices[stock_prices.index(bnum)...-1].each do |snum|
+        stock_prices[stock_prices.index(bnum)..-1].each do |snum|
             
             if snum.to_i - bnum.to_i > profit
                 profit = snum.to_i - bnum.to_i
